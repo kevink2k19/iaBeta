@@ -16,7 +16,7 @@
   <div class="row">
     <div class="container bgColorBlue color-w mb-4" id="capture">
     <div class="notiBar pTwi-10">
-        <span class="leftNoti"><i class="fas fa-signal"></i> 7:00 <i class="far fa-bell-slash"></i></span>
+        <span class="leftNoti"><i class="fas fa-signal"></i><text class="time"> 7:00</text><i class="far fa-bell-slash"></i></span>
         <span class="rightNoti"><i class="fas fa-wifi"></i> <small>23 kb/s</small> <i class="fas fa-battery-quarter"></i></span>
       </div>
       <div class="head-bar">
@@ -79,7 +79,7 @@
     <div class="mb-3 row ">
    <label for="amount" class="col-sm-4 col-form-label">ပမဏ</label>
    <div class="col-sm-8">
-     <input type="text" class="form-control amount" id="amount" name="amount" placeholder="ပမဏထည့်ပါ ဥပမာ 50,000" value="">
+     <input type="number" class="form-control amount" id="amount" name="amount" placeholder="ပမဏထည့်ပါ ဥပမာ 50,000" value="">
    </div>
  </div>
  <div class="mb-3 row ">
@@ -106,9 +106,15 @@
   <input type="text" class="form-control actionTime" id="actionTime" name="actionTime" value="" placeholder="ဥပမာ 23/04/2021 11:40:25">
  </div>
  <div class="col-sm-2">
-    <button type="button" name="button" class="btn btn-dark btnKPayTimeRamdom"><i class="fas fa-random"></i></button>
+    <button type="button" name="button" class="btn btn-dark btnKPayTimeRamdom trigger"><i class="fas fa-download"></i></i></button>
  </div>
  </div>
+ <div id="pop-up">
+       <p>
+          လက်ရှိအချိန်နှင့် နေ့စွဲကိုထည့်ရန်နှိပ်ပါ
+        </p>
+
+    </div>
  <div class="mb-3 row">
  <label for="Date" class="col-sm-3 col-form-label">Noti Bar</label>
  <div class="col-sm-9">

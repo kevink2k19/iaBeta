@@ -3,6 +3,36 @@ var nameAndPhone = $(".dataNamePhone");
 var dateEntry = $(".dataTime");
 var paymentIdNo = $(".dataID");
 var nameAndPhoneText = nameAndPhone.text();
+// popUP text
+$(function() {
+  var moveLeft = 20;
+  var moveDown = 10;
+
+  $('button.trigger').hover(function(e) {
+    $('div#pop-up').show();
+    //.css('top', e.pageY + moveDown)
+    //.css('left', e.pageX + moveLeft)
+    //.appendTo('body');
+  }, function() {
+    $('div#pop-up').hide();
+  });
+
+  $('button.trigger').mousemove(function(e) {
+    $("div#pop-up").css('top', e.pageY + moveDown).css('left', e.pageX + moveLeft);
+  });
+
+});
+function formatAMPM(date) {
+  var hours = date.getHours();
+  var minutes = date.getMinutes();
+  var ampm = hours >= 12 ? 'pm' : 'am';
+  hours = hours % 12;
+  hours = hours ? hours : 12; // the hour '0' should be '12'
+  minutes = minutes < 10 ? '0'+minutes : minutes;
+  var strTime = hours + ':' + minutes + ' ' + ampm;
+  return strTime;
+}
+$(".time").text(" "+formatAMPM(new Date));
 
 $('.checkBox').click(blurAction);
 $(".submitBtn").click(action);
@@ -10,33 +40,29 @@ $(".btnKPayIdRamdom").click(randomKpayID);
 $(".btnKPayTimeRamdom").click(randomKpayTime);
 
 function randomKpayTime(){
-  var hours = Math.floor(Math.random()*24+1);
-  var minutes = Math.floor(Math.random()*60);
-  var second = Math.floor(Math.random()*60);
-  var day = Math.floor(Math.random()*30+1);
-  var month = Math.floor(Math.random()*12+1);
-  if(second < 10){
-    var timeValue = hours+ ":" +minutes + ":" +"0"+ second;
-  }else if(minutes < 10){
-    var timeValue = hours+ ":" +"0"+minutes + ":" + second;
-  }else if(hours < 10){
-    var timeValue = "0"+hours+ ":" + minutes + ":" + second;
-  }
-  else{
-    var timeValue = hours+ ":" + minutes + ":" + second;
-  }
-  // $(".actionTime").val("00/00/0000 " + timeValue)
-  if(day < 10 && month <10){
-    var dateValue = "0"+day+"/"+"0"+month+"/"+2021;
-  }else if(month < 10){
-    var dateValue = day+"/"+"0"+month+"/"+2021;
-  }else if(day < 10 ){
-      var dateValue = "0"+day+"/"+month+"/"+2021;
-  }
-  else{
-    var dateValue = day+"/"+month+"/"+2021;
-  }
-  $(".actionTime").val(dateValue+" "+timeValue);
+
+  $(".actionTime").val(formatKpayDate(new Date)+ " "+formatKpayTime(new Date));
+}
+
+function formatKpayDate(date){
+   var day =date.getUTCDate();
+   var month = date.getUTCMonth();
+   var year = date.getUTCFullYear();
+   date = date < 10 ? "0"+date : date;
+   month = month < 10 ? "0"+month :month;
+   var shrDate = day +"/" + month + "/" + year;
+   return shrDate;
+}
+
+function formatKpayTime(date) {
+  var hours = date.getHours();
+  var minutes = date.getMinutes();
+  var seconds = date.getSeconds();
+  hours = hours < 10 ? "0"+ hours : hours;
+  minutes = minutes < 10 ? '0'+minutes : minutes;
+  seconds = seconds < 10 ? '0'+hours : hours;
+  var strTime = hours + ':' + minutes + ':' + seconds;
+  return strTime;
 }
 
 function randomKpayID(){
@@ -61,9 +87,46 @@ function action(){
   var dateInput = $(".actionTime").val();
   var firtThreeIdInput = $(".firstThreeidNum").val();
   var paymentIdInput = $(".paymentID").val();
+  if(priceInput.length === 0 ){
+    price.html("ပမာဏထည့်ပါ");
+    $(".dataPrice").addClass("color-warning");
+    $(".amount").addClass("boder-warning");
+  }else{
+      price.html(priceInput);
+      $(".dataPrice").removeClass("color-warning");
+      $(".amount").removeClass("boder-warning");
+  }
+  if(dateInput.length === 0){
+    dateEntry.text("နေ့စွဲထည့်ပါ");
+    $(".dataTime").addClass("color-warning");
+    $(".actionTime").addClass("boder-warning");
+  }else{
+    dateEntry.text(dateInput);
+    $(".dataTime").removeClass("warning-color");
+    $(".actionTime").removeClass("boder-warning");
+  }
 
-  price.html(priceInput);
-  nameAndPhone.text(nameInput+"(******"+phoneInput+")");
-  dateEntry.text(dateInput);
-  paymentIdNo.text(paymentIdInput);
+  if(nameInput.length === 0 || phoneInput.length === 0){
+      nameAndPhone.text("နာမည်နှင့်နံပါတ်နှစ်လုံးထည့်ပါ");
+      $('.dataNamePhone').addClass("color-warning");
+      $(".sendName").addClass("boder-warning");
+      $(".lastNumber").addClass("boder-warning");
+  } else{
+    nameAndPhone.text(nameInput+"(******"+phoneInput+")");
+    $('.dataNamePhone').removeClass("color-warning");
+    $(".sendName").removeClass("boder-warning");
+    $(".lastNumber").removeClass("boder-warning");
+  }
+
+if(paymentIdInput.length === 0){
+  paymentIdNo.text("လုပ်ငန်းစဉ်နံပါတ်ဖြည့်ပါ");
+  $(".dataID").addClass("color-warning");
+  $(".paymentID").addClass("boder-warning");
+}else{
+    paymentIdNo.text(paymentIdInput);
+    $(".dataID").removeClass("color-warning");
+    $(".paymentID").removeClass("boder-warning");
+}
+
+
 }
