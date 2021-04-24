@@ -1,0 +1,41 @@
+body{
+  color:#fff;
+}
+
+
+/* Header */
+.header{
+  background-image: url('../img/background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding:3% 15%;
+}
+
+/* Navigation Bar */
+h1{
+  line-height: 2;
+}
+p{
+  font-size: 1.2rem;
+}
+.navbar-brand{
+  font-family: 'Bebas Neue', cursive;
+  font-size: 2.5rem;
+}
+.navbar-nav{
+  font-family: 'Noto Sans HK', sans-serif;
+  font-size: 1.0rem;
+}
+.nav-link{
+  margin-left: 50px;
+}
+
+/* Explaination Section */
+.explainationSection{
+  padding:5% 12%;
+}
+
+/* sizing */
+.imgSize120{
+  width:120px;
+}

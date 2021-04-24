@@ -1,0 +1,202 @@
+/* tag */
+body{
+  overflow-x:hidden;
+  background-image: url("../img/bodybackground.jpg");
+  background-color: #cccccc; /* Used if the image is unavailable */
+  background-size:cover;
+  background-position: center;
+}
+@media (max-width:1024px){
+  body{
+    overflow-x:hidden;
+    overflow-y:scroll;
+    background-color: #cccccc; /* Used if the image is unavailable */
+    width:100%;
+    zoom:180%;
+  }
+}
+h2{
+  font-size:1.2rem;
+}
+hr{
+  margin:5px 0;
+  color:#ccc;
+}
+strong {
+  font-size:1.2rem;
+}
+
+
+/* backgroundColor Text-Color */
+.bgColorYellow{
+    background:#FFE512;
+}
+.bgColorBlue{
+    background:#0053AB;
+}
+.bgColorWhite{
+  background:#fff;
+}
+.color-w{
+  color:#fff;
+}
+.color-b{
+  color:#000;
+}
+.colorG{
+  color:#30C957;
+}
+.colorB{
+  color:#0053AB;
+}
+.colorKpayText{
+  color:#656666;
+}
+.blurText{
+  color: transparent;
+  text-shadow: 0 0 8px #000;
+  transition: 1000ms;
+}
+.block{
+  position:block;
+}
+.boder-warning{
+  border: 3px solid rgb(255 0 0/50%);
+}
+.color-warning{
+  color:#f00;
+}
+/* ------------------------------- Wave Pay ----------------------------- */
+/* container */
+.container{
+  width:380px;
+  text-align: center;
+  padding:0;
+}
+.pTri-10{
+  padding: 10px 10px 10px;
+}
+.pTwi-10{
+  padding: 0 10px;
+}
+/* notiBar */
+.notiBar{
+  text-align: left;
+}
+.leftNoti{
+}
+.rightNoti{
+  float:right;
+}
+
+.cusContianerFluid{
+  padding:0;
+  width:60px;
+  background:#fff;
+  margin-top:70px;
+  border-radius: 50%;
+}
+/* Payment Form */
+.paymentForm{
+  margin: -30px 5px 0px;
+  padding: 40px 0px 60px;
+  background:#fff;
+  border-radius: 10px;
+}
+.successInfo{
+  margin-bottom: 20px;
+}
+.price{
+  display: inline-block;
+  font-size:3rem;
+  color:#4CBEF0;
+  margin:-20px 0 0 0;
+}
+.currency{
+  position: absolute;
+  font-size:0.6rem;
+  margin-top:20px;
+}
+
+.Left{
+  text-align: left;
+}
+/* inlien float */
+.Right{
+  float: right;
+}
+.detailEntry{
+  margin: 0 10px;
+}
+.entryData{
+}
+.formPrice{
+  font-size:0.6rem;
+}
+/* button layout */
+.shareIcon{
+  width:32px;
+}
+.buttonPart{
+  margin:15px 5px;
+}
+.btn-mgBt{
+  margin-bottom: 30px;
+}
+.btn-cus{
+  width: 163px;
+  height: 50px;
+  border-radius:10px;
+}
+.bg-color{
+  background:#0091D2;
+}
+.box-shadow{
+  box-shadow:0 3px rgb(0 0 0/5%);
+}
+
+.submitBtn {
+  width:145px;
+}
+.previewImage{
+  display:hidden;
+}
+/* ------------------------------- Wave Pay ----------------------------- */
+/* ------------------------------- KBZ Pay ----------------------------- */
+.head-bar{
+  padding:15px 15px;
+  text-align: left;
+}
+.detail-lb{
+  margin-left: 20px;
+  display: inline-block;
+  font-size: 1.0rem;
+  vertical-align: 7px;
+}
+/* Content Area */
+.content{
+  background:#fff;
+}
+.sucess-label{
+  font-size:0.7rem;
+}
+text.priceKpay{
+  font-size:2.5rem;
+}
+.price-tag{
+  margin-left: 5px;
+  vertical-align: 4px;
+  font-size:0.8rem;
+}
+/* PaymentInfo */
+.paymentInfo{
+  margin-top:30px;
+  padding:5px 25px 250px;
+}
+.dataListKpay{
+  color:#CFD0D2;
+  font-size:0.7rem;
+}
+.dataSize{
+  font-size:0.8rem;
+}
