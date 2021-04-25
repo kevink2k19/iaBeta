@@ -9,18 +9,29 @@ $(function() {
   var moveDown = 10;
 
   $('button.trigger').hover(function(e) {
-    $('div#pop-up').show();
+    $('div#pop-upTime').show();
     //.css('top', e.pageY + moveDown)
     //.css('left', e.pageX + moveLeft)
     //.appendTo('body');
   }, function() {
-    $('div#pop-up').hide();
+    $('div#pop-upTime').hide();
   });
 
   $('button.trigger').mousemove(function(e) {
-    $("div#pop-up").css('top', e.pageY + moveDown).css('left', e.pageX + moveLeft);
+    $("div#pop-upTime").css('top', e.pageY + moveDown).css('left', e.pageX + moveLeft);
   });
 
+});
+
+$(function(){
+  $('button.triggerRandom').hover(function(e){
+    $('div#pop-upId').show();
+  },function(){
+    $('div#pop-upId').hide();
+  });
+  $('button.triggerRandom').mousemove(function(e){
+    $('div#pop-upId').css('top',e.pageY+20).css('left',e.pageX+20);
+  });
 });
 function formatAMPM(date) {
   var hours = date.getHours();
