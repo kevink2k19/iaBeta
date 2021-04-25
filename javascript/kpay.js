@@ -113,7 +113,7 @@ function action(){
     $(".actionTime").addClass("boder-warning");
   }else{
     dateEntry.text(dateInput);
-    $(".dataTime").removeClass("warning-color");
+    $(".dataTime").removeClass("color-warning");
     $(".actionTime").removeClass("boder-warning");
   }
 
