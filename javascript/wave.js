@@ -71,6 +71,7 @@ function blurAction() {
   }
 }
 
+
 function action() {
   var priceInput = $(".amount").val();
   var phoneInput = $(".phoneNo").val();
@@ -82,12 +83,14 @@ function action() {
     price.text("ပမာဏဖြည့်ပါ").css("color", "red");
     subPrice.text("ပမာဏဖြည့်ပါ").css("color", "red");
     $(".amount").addClass("boder-warning");
-  } else {
-    price.text(priceInput).css("color", "#4CBEF0");
-    subPrice.text(priceInput).css("color", "#000");
-    $(".amount").removeClass("boder-warning");
-    subPrice.text(priceInput);
   }
+   else {
+    price.text(numberWithCommas(priceInput)).css("color", "#4CBEF0");
+    subPrice.text(numberWithCommas(priceInput)).css("color", "#000");
+    $(".amount").removeClass("boder-warning");
+  }
+
+
   if (phoneInput.length === 0) {
     $(".phoneNohead").addClass("color-warning");
     $(".phoneNo").addClass("boder-warning");
@@ -127,3 +130,10 @@ function action() {
 
 
 }
+function numberWithCommas(x) {
+    x = x.toString();
+    var pattern = /(-?\d+)(\d{3})/;
+    while (pattern.test(x))
+        x = x.replace(pattern, "$1,$2");
+    return x;
+};

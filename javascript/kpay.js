@@ -99,11 +99,12 @@ function action(){
   var firtThreeIdInput = $(".firstThreeidNum").val();
   var paymentIdInput = $(".paymentID").val();
   if(priceInput.length === 0 ){
-    price.html("ပမာဏထည့်ပါ");
+
+    price.text("ပမာဏထည့်ပါ");
     $(".dataPrice").addClass("color-warning");
     $(".amount").addClass("boder-warning");
   }else{
-      price.html(priceInput);
+      price.text(numberWithCommas(priceInput));
       $(".dataPrice").removeClass("color-warning");
       $(".amount").removeClass("boder-warning");
   }
@@ -141,3 +142,11 @@ if(paymentIdInput.length === 0){
 
 
 }
+
+function numberWithCommas(x) {
+    x = x.toString();
+    var pattern = /(-?\d+)(\d{3})/;
+    while (pattern.test(x))
+        x = x.replace(pattern, "$1,$2");
+    return x;
+};
