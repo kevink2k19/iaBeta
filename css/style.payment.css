@@ -16,7 +16,7 @@ body{
   }
 }
 h2{
-  font-size:1.2rem;
+  font-size:1.0rem;
 }
 hr{
   margin:5px 0;
@@ -88,6 +88,16 @@ div#pop-upId {
 .color-warning{
   color:#f00;
 }
+.texToEnglish{
+  font-size:1.5rem;
+  color:#121212;
+  font-weight: normal;
+}
+.dataTextToEnglish{
+  font-size:1.2rem;
+  color:#121212;
+  font-weight: normal;
+}
 /* ------------------------------- Wave Pay ----------------------------- */
 /* container */
 .container{
@@ -130,14 +140,15 @@ div#pop-upId {
 }
 .price{
   display: inline-block;
-  font-size:3rem;
+  font-size:2.5rem;
   color:#4CBEF0;
-  margin:-20px 0 0 0;
+  margin:-10px 0 10px -20px;
 }
 .currency{
   position: absolute;
   font-size:0.6rem;
   margin-top:20px;
+  margin-left: 2px;
 }
 
 .Left{
