@@ -137,3 +137,31 @@ function numberWithCommas(x) {
         x = x.replace(pattern, "$1,$2");
     return x;
 };
+
+$(".language").on("change",function(){
+  if(this.value === "mym-uni"){
+   $(".currency").text("ကျပ်");
+   $(".formPrice").text("ကျပ်");
+   $(".successText").text("အောင်မြင်ပါတယ်");
+   $(".successText").removeClass("texToEnglish");
+   $(".toText").text("သို့");
+   $(".toText").removeClass("texToEnglish");
+   $(".dataFeeForm").text("ဝန်ဆောင်ခ");
+   $(".dataPriceForm").text("ငွေပမာဏ");
+   $(".dataDateForm").text("နေ့စွဲ");
+   $(".dataIdForm").text("လုပ်ငန်းစဉ်အမှတ်");
+   $(".dataList").removeClass("dataTextToEnglish");
+  }else{
+    $(".currency").text("Kyat");
+    $(".formPrice").text("Kyat");
+    $(".successText").text("Successful");
+    $(".successText").addClass("texToEnglish");
+    $(".toText").text("to");
+    $(".toText").addClass("texToEnglish");
+    $(".dataFeeForm").text("Transaction Fee");
+    $(".dataPriceForm").text("Amount");
+    $(".dataDateForm").text("Date");
+    $(".dataIdForm").text("Transaction ID");
+    $(".dataList").addClass("dataTextToEnglish");
+  }
+})
