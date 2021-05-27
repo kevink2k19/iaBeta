@@ -4,6 +4,7 @@ var phoneNO = $(".phoneNohead");
 var dateEntry = $(".dateEntry");
 var firtIdNo = $(".firstThreepaymentID");
 var paymentIdNo = $(".paymentID");
+
 $(function(){
   $('button.triggerRandom').hover(function(e){
     $('div#pop-upId').show();
@@ -149,6 +150,8 @@ $(".language").on("change",function(){
    $(".dataFeeForm").text("ဝန်ဆောင်ခ");
    $(".dataPriceForm").text("ငွေပမာဏ");
    $(".dataDateForm").text("နေ့စွဲ");
+   $(".wrong-btn").text("မှားနေပါတယ်");
+   $(".ok-btn").text("အိုကေ")
    $(".dataIdForm").text("လုပ်ငန်းစဉ်အမှတ်");
    $(".dataList").removeClass("dataTextToEnglish");
   }else{
@@ -161,7 +164,10 @@ $(".language").on("change",function(){
     $(".dataFeeForm").text("Transaction Fee");
     $(".dataPriceForm").text("Amount");
     $(".dataDateForm").text("Date");
+    $(".wrong-btn").text("I made a mistake");
+    $(".ok-btn").text("Ok")
     $(".dataIdForm").text("Transaction ID");
     $(".dataList").addClass("dataTextToEnglish");
+
   }
 })
