@@ -233,3 +233,22 @@ text.priceKpay{
 .dataSize{
   font-size:0.8rem;
 }
+.reciever{
+  width:60%;
+  margin:0 auto;
+  height:46px;
+}
+.imgReciever{
+  width:20%;
+  float:left;
+}
+.userImg{
+  width:46px;
+}
+.dataReciever{
+  text-align:left;
+  padding-left:20px;
+  float:right;
+  width:80%;
+
+}
