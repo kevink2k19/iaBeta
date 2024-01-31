@@ -4,6 +4,7 @@ var phoneNO = $(".phoneNohead");
 var dateEntry = $(".dateEntry");
 var firtIdNo = $(".firstThreepaymentID");
 var paymentIdNo = $(".paymentID");
+var revieverName = $(".recieverName");
 
 $(function(){
   $('button.triggerRandom').hover(function(e){
@@ -54,9 +55,9 @@ function randomWpayDate() {
     var day = Math.floor((Math.random() * 30 + 1));
   }
   if (day < 10) {
-    var dateValue = "0" + day + " " + month + " 2021";
+    var dateValue = "0" + day + " " + month + " 2024";
   } else {
-    var dateValue = day + " " + month + " 2021";
+    var dateValue = day + " " + month + " 2024";
   }
   $(".date").val(dateValue);
 }
@@ -75,6 +76,7 @@ function blurAction() {
 
 function action() {
   var priceInput = $(".amount").val();
+  var recieverInput = $(".recieverInput").val();
   var phoneInput = $(".phoneNo").val();
   var dateInput = $(".date").val();
   var firtThreeIdInput = $(".firstThreeidNum").val();
@@ -90,7 +92,13 @@ function action() {
     subPrice.text(numberWithCommas(priceInput)).css("color", "#000");
     $(".amount").removeClass("boder-warning");
   }
-
+if(recieverInput.length == 0){
+  revieverName.text("နာမည်ရေးပါ").css("color", "red");
+  $(".recieverInput").addClass("boder-warning");
+}else{
+  revieverName.text(recieverInput).css("color", "#000");
+  $(".recieverInput").removeClass("boder-warning");
+  }
 
   if (phoneInput.length === 0) {
     $(".phoneNohead").addClass("color-warning");
